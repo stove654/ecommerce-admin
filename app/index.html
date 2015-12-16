@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.css" />
     <link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.min.css" />
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -23,12 +24,13 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="quikiePrototypeAdminApp">
+  <body ng-app="quikiePrototypeAdminApp" ng-controller="AppCtrl">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right'}"></toaster-container>
 
     <div ui-view style="width: 100%; height: 100%"></div>
 
@@ -59,6 +61,8 @@
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
+    <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -69,11 +73,15 @@
 
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/category.js"></script>
+    <script src="scripts/controllers/category_detail.js"></script>
 
     <!-- directive -->
     <script src="scripts/directives/select_language.js"></script>
 
     <!-- service-->
+    <script src="scripts/services/restful.js"></script>
+    <script src="scripts/services/session.js"></script>
 
     <!-- endbuild -->
 </body>

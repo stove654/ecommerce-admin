@@ -1,67 +1,71 @@
-<div class="error-body no-top">
-
+<div class="error-body no-top lazy" style="background-image: url('./images/work.jpg')">
     <div class="container">
-        <div class="row login-container column-seperation">
-            <div class="col-md-5 col-md-offset-1">
-                <h2>Sign in to webarch</h2>
+        <div class="row login-container animated fadeInUp">
+            <div class="col-md-7 col-md-offset-2 tiles white no-padding">
+                <div class="p-t-30 p-l-40 p-b-20 xs-p-t-10 xs-p-l-10 xs-p-b-10">
+                    <h2 class="normal" translate="SIGN_TEXT"></h2>
 
-                <p>Use Facebook, Twitter or your email to sign in.<br>
-                    <a href="#">Sign up Now!</a> for a webarch account,It's free and always will be..</p>
-                <br>
-
-                <button class="btn btn-block btn-info col-md-8" type="button">
-                    <span class="pull-left"><i class="icon-facebook"></i></span>
-                    <span class="bold">Login with Facebook</span></button>
-                <button class="btn btn-block btn-success col-md-8" type="button">
-                    <span class="pull-left"><i class="icon-twitter"></i></span>
-                    <span class="bold">Login with Twitter</span>
-                </button>
-            </div>
-            <div class="col-md-5 "><br>
-
-                <form id="login-form" class="login-form" action="index.html" method="post">
-                    <div class="row">
-                        <div class="form-group col-md-10">
-                            <label class="form-label">Username</label>
-
-                            <div class="controls">
-                                <div class="input-with-icon  right">
-                                    <i class=""></i>
-                                    <input type="text" name="txtusername" id="txtusername" class="form-control">
+                    <p class="p-b-20">Sign up Now! for store accounts, it's free and always will be..</p>
+                    <button type="button" class="btn btn-primary btn-cons" id="login_toggle" ng-click="viewSignIn()">Login</button>
+                    or&nbsp;&nbsp;
+                    <button type="button" class="btn btn-info btn-cons" id="register_toggle" ng-click="viewSignUp()"> Create an account</button>
+                </div>
+                <div class="tiles grey p-t-20 p-b-20 text-black">
+                    <form id="frm_login" class="animated fadeIn" ng-show="!data.signUp" ng-submit="login()">
+                        <div class="row form-row m-l-20 m-r-20 xs-m-l-10 xs-m-r-10">
+                            <div class="col-md-6 col-sm-6 ">
+                                <input name="login_username" id="login_username" type="email" class="form-control"
+                                       placeholder="Email" ng-model="data.user.email" required>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <input name="login_pass" id="login_pass" type="password" class="form-control"
+                                       placeholder="Password" ng-model="data.user.password" required>
+                            </div>
+                        </div>
+                        <div class="row p-t-10 m-l-20 m-r-20 xs-m-l-10 xs-m-r-10">
+                            <div class="control-group  col-md-10">
+                                <div class="checkbox checkbox check-success"><a>Trouble login in?</a>&nbsp;&nbsp;
+                                    <input type="checkbox" id="checkbox1" value="1">
+                                    <label for="checkbox1">Keep me reminded </label>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-10">
-                            <label class="form-label">Password</label>
-                            <span class="help"></span>
+                        <div class="row p-t-10 m-l-20 m-r-20 xs-m-l-10 xs-m-r-10">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-danger btn-cons"> Signin</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form id="frm_register" class="animated fadeIn" ng-show="data.signUp" ng-submit="createNewUser()">
+                        <div class="row form-row m-l-20 m-r-20 xs-m-l-10 xs-m-r-10">
+                            <div class="col-md-6 col-sm-6">
+                                <input name="reg_username" id="reg_username" type="email" class="form-control"
+                                       placeholder="Email" ng-model="data.newUser.email">
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <input name="reg_pass" id="reg_pass" type="password" class="form-control"
+                                       placeholder="Password" ng-model="data.newUser.password">
+                            </div>
+                        </div>
+                        <div class="row form-row m-l-20 m-r-20 xs-m-l-10 xs-m-r-10">
+                            <div class="col-md-6 col-sm-6">
+                                <input name="reg_first_Name" id="reg_first_Name" type="text" class="form-control"
+                                       placeholder="First Name" ng-model="data.newUser.firstName">
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <input name="reg_first_Name" id="reg_last_Name" type="text" class="form-control"
+                                       placeholder="Last Name" ng-model="data.newUser.lastName">
+                            </div>
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-danger btn-cons" ng-click="createNewUser()"> Create an account</button>
+                            </div>
 
-                            <div class="controls">
-                                <div class="input-with-icon  right">
-                                    <i class=""></i>
-                                    <input type="password" name="txtpassword" id="txtpassword" class="form-control">
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="control-group  col-md-10">
-                            <div class="checkbox checkbox check-success"><a href="#">Trouble login in?</a>&nbsp;&nbsp;
-                                <input type="checkbox" id="checkbox1" value="1">
-                                <label for="checkbox1">Keep me reminded </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-10">
-                            <button class="btn btn-primary btn-cons pull-right" type="submit">Login</button>
-                        </div>
-                    </div>
-                </form>
+
+                    </form>
+                </div>
             </div>
-
-
         </div>
     </div>
+
 </div>

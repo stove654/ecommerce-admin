@@ -3,7 +3,7 @@
  angular.module("quikiePrototypeAdminApp")
    .constant("ENV", {
      "name": "production",
-     "apiEndpoint": "http://localhost:8080/api/"
+     "apiEndpoint": "http://localhost:8080"
    })
 
 ;
